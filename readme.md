@@ -2,6 +2,10 @@
 
 This is a quick plugin for testing various languages in a WordPress install.  I use this for theme dev and plan to expand it to do some cooler stuff in the future.
 
+## Live demo
+
+You can see this plugin in action on the [Stargazer theme demo](http://locallylost.com/stargazer).  Select a language from the "Languages" menu.  
+
 ## Usage
 
 The following will guide you in using this plugin.  It doesn't currently have any admin options or anything.  It's in the early dev stages.
