@@ -68,6 +68,15 @@ final class JT_Lang_Plugin {
 		return $locale;
 	}
 
+	/**
+	 * Filters the post permalink to add a custom query arg with our language.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string  $permalink
+	 * @param  object  $post
+	 * @return string
+	 */
 	public function post_link( $permalink, $post ) {
 
 		$lang = get_post_meta( $post->ID, 'lang', true );
