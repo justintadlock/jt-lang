@@ -55,6 +55,7 @@ final class JT_Lang_Plugin {
 			'ja',    // Japanese
 			'fi',    // Finnish
 			'fr_FR', // French
+			'he_IL', // Hebrew
 			'zh_CN', // Chinese
 			'ro_RO', // Romanian
 			'th',    // Thai
