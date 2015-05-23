@@ -1,7 +1,13 @@
 <?php
 /**
  * Plugin Name: JT Lang
- * Plugin URI: https://github.com/justintadlock/jt-lang
+ * Plugin URI:  https://github.com/justintadlock/jt-lang
+ * Version:     1.0.0-dev
+ * Description: A language testing plugin for testing themes with various languages. Currently works on a per-post basis.
+ * Author:      Justin Tadlock
+ * Author URI:  http://themehybrid.com
+ * License:     GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 /**
@@ -34,13 +40,13 @@ final class JT_Lang_Plugin {
 		// Register meta.
 		add_action( 'init', array( $this, 'register_meta' ) );
 
-		/* Change the locale. */
+		// Change the locale.
 		add_filter( 'locale', array( $this, 'locale' ), 99 );
 
-		/* Filter the permalink. */
+		// Filter the permalink.
 		add_filter( 'post_link', array( $this, 'post_link' ), 10, 2 );
 
-		/* Load meta box on edit post screen. */
+		// Load meta box on edit post screen.
 		add_action( 'load-post.php',     array( $this, 'load_post' ) );
 		add_action( 'load-post-new.php', array( $this, 'load_post' ) );
 	}
