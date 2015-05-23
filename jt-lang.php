@@ -31,6 +31,9 @@ final class JT_Lang_Plugin {
 	 */
 	public function __construct() {
 
+		// Register meta.
+		add_action( 'init', array( $this, 'register_meta' ) );
+
 		/* Change the locale. */
 		add_filter( 'locale', array( $this, 'locale' ), 99 );
 
@@ -40,6 +43,17 @@ final class JT_Lang_Plugin {
 		/* Load meta box on edit post screen. */
 		add_action( 'load-post.php',     array( $this, 'load_post' ) );
 		add_action( 'load-post-new.php', array( $this, 'load_post' ) );
+	}
+
+	/**
+	 * Registers the 'lang' meta key for posts.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function register_meta() {
+		register_meta( 'post', 'lang', array( $this, 'sanitize_meta' ), '__return_false' );
 	}
 
 	/**
@@ -106,7 +120,6 @@ final class JT_Lang_Plugin {
 	 * @return void
 	 */
 	public function add_lang_meta_box( $post_type ) {
-
 		add_meta_box( 'jt-lang', esc_html__( 'Language', 'jt-lang' ), array( $this, 'display_lang_meta_box' ), $post_type, 'side', 'default' );
 	}
 
